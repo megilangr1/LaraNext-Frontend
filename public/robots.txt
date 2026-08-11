@@ -1,0 +1,22 @@
+# Robots.txt for Starter
+# https://starter.chiro-it.site
+
+User-agent: *
+Allow: /
+
+Allow: /static/
+Allow: /_next/static/
+Allow: /_next/image/
+Allow: /favicon.ico
+Allow: /favicon-16x16.png
+Allow: /favicon-32x32.png
+Allow: /apple-touch-icon.png
+Allow: /site.webmanifest
+
+Disallow: /login
+Disallow: /dashboard
+Disallow: /master-data/
+Disallow: /api/auth
+
+# Crawl delay
+Crawl-delay: 1

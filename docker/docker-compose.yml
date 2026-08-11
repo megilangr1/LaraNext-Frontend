@@ -1,0 +1,20 @@
+services:
+  frontend:
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile # Sesuaikan path jika ditaruh di dalam folder docker/
+    container_name: starter-frontend
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:3000" # Di-expose ke localhost port 3000 host
+    environment:
+      - NODE_ENV=production
+      # Jika butuh env API Backend saat build, masukkan di sini:
+      - NEXT_PUBLIC_API_BASE_URL=http://api-starter.chiro-it.site
+    networks:
+      - shared_network
+
+networks:
+  shared_network:
+    external: true # Menggunakan network yang sudah dibuat di backend kemarin
+
